@@ -1,69 +1,73 @@
-$spacer: 10;
+@import "bootstrap/bootstrap";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 
-@import 'bootstrap/bootstrap';
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
-
-$font-primary: 'Lato',Arial, sans-serif;
+$font-primary: "Lato", Arial, sans-serif;
 $primary: #f18416;
 
-
-body{
-	font-family: $font-primary;
-	font-size: 16px;
-	line-height: 1.8;
-	font-weight: normal;
-	background: #f8f9fd;
-	color: lighten($black,50%);
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #f8f9fd;
+  color: lighten($black, 50%);
 }
 a {
-	transition: .3s all ease;
-	color: $primary;
-	&:hover, &:focus {
-		text-decoration: none !important;
-		outline: none !important;
-		box-shadow: none;
-	}
+  transition: 0.3s all ease;
+  color: $primary;
+  &:hover,
+  &:focus {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none;
+  }
 }
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
-	line-height: 1.5;
-	font-weight: 400;
-	font-family: $font-primary;
-	color: $black;
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: $font-primary;
+  color: $black;
 }
 
-.bg-primary{
-	background: $primary !important;
+.bg-primary {
+  background: $primary !important;
 }
 
 .table-date:not(.nil):hover {
   border-color: #f18416 !important;
 }
 
-
-
-.ftco-section{
-	padding: 7em 0;
+.ftco-section {
+  padding: 7em 0;
 }
 
-.ftco-no-pt{
-	padding-top: 0;
+.ftco-no-pt {
+  padding-top: 0;
 }
-.ftco-no-pb{
-	padding-bottom: 0;
+.ftco-no-pb {
+  padding-bottom: 0;
 }
 //HEADING SECTION
-.heading-section{
-	font-size: 28px;
-	color: $black;
+.heading-section {
+  font-size: 28px;
+  color: $black;
 }
 
 //COVER BG
-.img{
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .content {
@@ -83,19 +87,19 @@ h1, h2, h3, h4, h5,
   height: 100%;
   width: 50%;
   float: right;
-  margin: 0px auto; 
-  display: inline-block; 
+  margin: 0px auto;
+  display: inline-block;
   padding: 0px;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
   padding: 0;
-  @include media-breakpoint-down(sm){
-  	width: 100%;
-  	height: auto;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    height: auto;
   }
 }
-.events-container:after{
-    clear:both;
+.events-container:after {
+  clear: both;
 }
 .event-card {
   padding: 20px 0;
@@ -106,99 +110,105 @@ h1, h2, h3, h4, h5,
   margin: 20px;
   margin-left: 12px;
   // border-radius: 3px;
-  @include media-breakpoint-down(md){
-  	margin: 10px;
+  @include media-breakpoint-down(md) {
+    margin: 10px;
   }
-  @include media-breakpoint-down(sm){
-  	margin: 0;
-  	background: lighten($black,90%);
-  	// color: $white;
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+    background: lighten($black, 90%);
+    // color: $white;
   }
 }
-.event-count, .event-name, .event-cancelled {
-    display: inline;
-    padding: 0 10px;
-    font-size: 1rem;
+.event-count,
+.event-name,
+.event-cancelled {
+  display: inline;
+  padding: 0 10px;
+  font-size: 1rem;
 }
 .event-count {
-    color: $primary;
-    text-align: right;
+  color: $primary;
+  text-align: right;
 }
 .event-name {
-    padding-right:0;
-    text-align: left;
+  padding-right: 0;
+  text-align: left;
 }
 .event-cancelled {
-    color: #f18416;
-    text-align: right;
+  color: #f18416;
+  text-align: right;
 }
 
 /*  Calendar wrapper */
-.calendar-container  { 
+.calendar-container {
   position: relative;
-  margin: 0 auto; 
+  margin: 0 auto;
   height: 100%;
   width: 50%;
   background: #fff;
-  font: 13px Helvetica, Arial, san-serif; 
-  display: inline-block; 
+  font:
+    13px Helvetica,
+    Arial,
+    san-serif;
+  display: inline-block;
   padding: 20px;
   float: left;
-  @include media-breakpoint-down(md){
-  	padding: 0;
+  @include media-breakpoint-down(md) {
+    padding: 0;
   }
-  @include media-breakpoint-down(sm){
-  	padding: 0;
-  	width: 100%;
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    width: 100%;
   }
 }
-.calendar-container:after{
-    clear:both;
+.calendar-container:after {
+  clear: both;
 }
 .calendar {
-    // display: table;
-    width: 100%;
-    padding: 0;
+  // display: table;
+  width: 100%;
+  padding: 0;
 }
 
 /* Calendar Header */
-.year-header { 
+.year-header {
   background: $white;
-  height: 40px; 
+  height: 40px;
   text-align: center;
-  position: relative; 
-  color:#fff; 
+  position: relative;
+  color: #fff;
   border-top-left-radius: 3px;
   margin-top: 20px;
-} 
-.year-header span { 
-  display:inline-block; 
+}
+.year-header span {
+  display: inline-block;
   font-size: 20px;
-  line-height:40px; 
+  line-height: 40px;
   color: $black;
 }
-.left-button, .right-button { 
+.left-button,
+.right-button {
   cursor: pointer;
-  width:28px; 
-  text-align:center; 
-  position:absolute; 
-  color: lighten($black,80%) !important;
-  @include transition(.3s);
+  width: 28px;
+  text-align: center;
+  position: absolute;
+  color: lighten($black, 80%) !important;
+  @include transition(0.3s);
   font-size: 14px !important;
-  &:hover{
-  	color: $primary !important;
+  &:hover {
+    color: $primary !important;
   }
-} 
-.left-button { 
-  left:0; 
-} 
-.right-button { 
-  right:0; 
-  top:0; 
-} 
+}
+.left-button {
+  left: 0;
+}
+.right-button {
+  right: 0;
+  top: 0;
+}
 
 /* Buttons */
-.button{
+.button {
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -207,66 +217,72 @@ h1, h2, h3, h4, h5,
   font-size: 1rem;
   border-radius: 25px;
   padding: 0.65rem 1.9rem;
-  transition: .2s ease all;
+  transition: 0.2s ease all;
   color: white;
   border: none;
   background: $primary;
-  &.button-white{
-  	background: $white;
-  	color: $black;
+  &.button-white {
+    background: $white;
+    color: $black;
   }
-  &:focus{
-  	box-shadow: none;
-  	outline: none;
+  &:focus {
+    box-shadow: none;
+    outline: none;
   }
 }
 #cancel-button {
-    background: #f18416;
+  background: #f18416;
 }
 #add-button {
   display: block;
   position: absolute;
-  right:20px;
+  right: 20px;
   bottom: 20px;
 }
-#add-button:hover, #ok-button:hover, #cancel-button:hover {
+#add-button:hover,
+#ok-button:hover,
+#cancel-button:hover {
   transform: scale(1.03);
 }
-#add-button:active, #ok-button:active, #cancel-button:active {
-  transform: translateY(3px) scale(.97);
+#add-button:active,
+#ok-button:active,
+#cancel-button:active {
+  transform: translateY(3px) scale(0.97);
 }
 
 /* Days/months tables */
-.days-table, .dates-table, .months-table { 
-    border-collapse:separate; 
-    text-align: center;
-} 
-.day { 
+.days-table,
+.dates-table,
+.months-table {
+  border-collapse: separate;
+  text-align: center;
+}
+.day {
   height: 26px;
   width: 26px;
   padding: 0 10px;
-  line-height: 26px; 
+  line-height: 26px;
   border: 2px solid transparent;
-  text-transform:uppercase; 
-  font-size:10px; 
-  color:#000; 
-} 
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #000;
+}
 .month {
   cursor: default;
   height: 26px;
   width: 26px;
   padding: 0 2px;
-  padding-top:10px;
-  line-height: 26px; 
-  text-transform:uppercase; 
-  font-size: 11px; 
-  color: lighten($black,80%); 
+  padding-top: 10px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: lighten($black, 80%);
   transition: all 250ms;
-  @include media-breakpoint-down(md){
-  	font-size: 8px;
+  @include media-breakpoint-down(md) {
+    font-size: 8px;
   }
-  @include media-breakpoint-down(sm){
-  	font-size: 10.5px;
+  @include media-breakpoint-down(sm) {
+    font-size: 10.5px;
   }
 }
 .active-month {
@@ -278,79 +294,79 @@ h1, h2, h3, h4, h5,
 /*  Dates table */
 .table-date {
   cursor: default;
-  color:#2b2b2b; 
-  height:26px;
+  color: #2b2b2b;
+  height: 26px;
   width: 26px;
   font-size: 15px;
   padding: 10px;
-  line-height:26px; 
-  text-align:center; 
+  line-height: 26px;
+  text-align: center;
   border-radius: 50%;
   border: 2px solid transparent;
   transition: all 250ms;
   position: relative;
 }
-.table-date:not(.nil):hover { 
-    border-color: #f18416;
+.table-date:not(.nil):hover {
+  border-color: #f18416;
 }
 .event-date {
-  border-color:$primary;
+  border-color: $primary;
   background: $primary;
   color: $white;
-	&:after{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		content: '';
-		background: $success;
-	}
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: "";
+    background: $success;
+  }
 }
-.active-date{ 
-    background: #f18416;
-    color: #fff;
+.active-date {
+  background: #f18416;
+  color: #fff;
 }
 .event-date.active-date {
-    background: $primary;
+  background: $primary;
 }
 
 /* input dialog */
-.dialog{
+.dialog {
   z-index: 5;
   background: $black;
-  position:absolute;
-  width:50%;
+  position: absolute;
+  width: 50%;
   height: 500px;
   top: 0;
-  right:0;
-  display:none;
-  @include media-breakpoint-down(sm){
-  	width: 100%;
+  right: 0;
+  display: none;
+  @include media-breakpoint-down(sm) {
+    width: 100%;
   }
 }
 .dialog-header {
   margin: 20px;
-  color:#fff;
+  color: #fff;
   text-align: center;
   font-size: 28px;
 }
 .form-container {
-  margin-top:25%;
+  margin-top: 25%;
 }
 .form-label {
-	text-transform: uppercase;
-	font-size: 13px;
-	letter-spacing: 1px;
-  color:rgba(255,255,255,.9);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 }
 .input {
-  border:none;
+  border: none;
   background: none;
-  border-bottom: 1px rgba(255,255,255,.2) solid;
-  display:block;
-  margin-bottom:50px;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+  display: block;
+  margin-bottom: 50px;
   width: 300px;
   height: 20px;
   text-align: center;
@@ -358,9 +374,9 @@ h1, h2, h3, h4, h5,
   color: $white;
 }
 .input:focus {
-  outline:none;
+  outline: none;
   border-color: #fff;
 }
 .error-input {
-    border-color: #f18416;
+  border-color: #f18416;
 }
