@@ -1,0 +1,10 @@
+personalid,username,startzeit,endzeit,last_updated,p_id,projectname
+69,testuser,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),2,Projekt2
+69,testuser,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),3,Projekt3
+69,testuser,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),1,Projekt1
+69,testuser,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),3,Projekt3
+69,testuser,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),1,Projekt1
+88,stephan,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),4,Projekt4
+88,stephan,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),1,Projekt1
+88,stephan,08:00:00,20:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),3,Projekt3
+88,stephan,08:00:00,16:00:00,Tue Apr 16 2024 00:00:00 GMT+0200 (Central European Summer Time),2,Projekt2
