@@ -6,7 +6,6 @@ import argon2 from 'argon2'; // Bibliothek für Passwort-Hashing
 import fs from 'fs'; //Bibliothek für FileSystem
 import path from 'path'; //Bibliotek für Pfadmanagement
 
-
 // Initialisiere die Express-App
 const app = express();
 const port = 3000;
@@ -213,9 +212,7 @@ app.get('/calendar', async (req, res) => {
     } else {
         res.redirect('/');
     }
-}); 
-
-
+});
 
 // Starte den Server
 app.listen(port, () => {
