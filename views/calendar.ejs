@@ -12,7 +12,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="/calendar.css">
+        <link rel="stylesheet" href="/calendar.css" />
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
     </head>
@@ -33,92 +33,102 @@
                     ></object>
                 </a>
             </div>
+            
         </header>
-<div class="content">
-        <div class="calendar-container">
-            <div class="calendar">
-                <div class="year-header">
-                    <span class="left-button fa fa-chevron-left" id="prev">
-                    </span>
-                    <span class="year" id="label"></span>
-                    <span class="right-button fa fa-chevron-right" id="next">
-                    </span>
-                </div>
-                <table class="months-table w-100">
-                    <tbody>
-                        <tr>
-                            <td class="month">Jan</td>
-                            <td class="month">Feb</td>
-                            <td class="month">Mar</td>
-                            <td class="month">Apr</td>
-                            <td class="month">May</td>
-                            <td class="month">Jun</td>
-                            <td class="month">Jul</td>
-                            <td class="month">Aug</td>
-                            <td class="month">Sep</td>
-                            <td class="month">Oct</td>
-                            <td class="month">Nov</td>
-                            <td class="month">Dec</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table class="days-table w-100">
-                    <tbody>
-                    <tr>
-                    <td class="day">Sun</td>
-                    <td class="day">Mon</td>
-                    <td class="day">Tue</td>
-                    <td class="day">Wed</td>
-                    <td class="day">Thu</td>
-                    <td class="day">Fri</td>
-                    <td class="day">Sat</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="frame">
-                    <table class="dates-table w-100">
-                        <tbody class="tbody"></tbody>
+        <div class="content">
+            <div class="calendar-container">
+                <div class="calendar">
+                    <div class="year-header">
+                        <span class="left-button fa fa-chevron-left" id="prev">
+                        </span>
+                        <span class="year" id="label"></span>
+                        <span
+                            class="right-button fa fa-chevron-right"
+                            id="next"
+                        >
+                        </span>
+                    </div>
+                    <table class="months-table w-100">
+                        <tbody>
+                            <tr>
+                                <td class="month">Jan</td>
+                                <td class="month">Feb</td>
+                                <td class="month">Mar</td>
+                                <td class="month">Apr</td>
+                                <td class="month">May</td>
+                                <td class="month">Jun</td>
+                                <td class="month">Jul</td>
+                                <td class="month">Aug</td>
+                                <td class="month">Sep</td>
+                                <td class="month">Oct</td>
+                                <td class="month">Nov</td>
+                                <td class="month">Dec</td>
+                            </tr>
+                        </tbody>
                     </table>
+
+                    <table class="days-table w-100">
+                        <tbody>
+                            <tr>
+                                <td class="day">Sun</td>
+                                <td class="day">Mon</td>
+                                <td class="day">Tue</td>
+                                <td class="day">Wed</td>
+                                <td class="day">Thu</td>
+                                <td class="day">Fri</td>
+                                <td class="day">Sat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="frame">
+                        <table class="dates-table w-100">
+                            <tbody class="tbody"></tbody>
+                        </table>
+                    </div>
+                    <button class="button" id="add-button">Check Time</button>
                 </div>
-                <button class="button" id="add-button">Check Time</button>
+            </div>
+            <div class="events-container"></div>
+            <div class="dialog" id="dialog">
+                <h2 class="dialog-header">Your Time Data</h2>
+                <form class="form" id="form">
+                    <div class="form-container" align="center">
+                        <label
+                            class="form-label"
+                            id="valueFromMyButton"
+                            for="name"
+                            >WorkTime</label
+                        >
+                        <input
+                            class="input"
+                            type="date"
+                            id="name"
+                            maxlength="36"
+                            value=" <%=   %>"
+                        />
+                        <label
+                            class="form-label"
+                            id="valueFromMyButton"
+                            for="count"
+                            >Project</label
+                        >
+                        <input
+                            class="input"
+                            type="date"
+                            id="name"
+                            maxlength="36"
+                            value=" <%=  %>"
+                        />
+                        <input
+                            type="button"
+                            value="Cancel"
+                            class="button"
+                            id="cancel-button"
+                        />
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="events-container"></div>
-        <div class="dialog" id="dialog">
-            <h2 class="dialog-header">Your Time Data</h2>
-            <form class="form" id="form">
-                <div class="form-container" align="center">
-                    <label class="form-label" id="valueFromMyButton" for="name"
-                        >WorkTime</label
-                    >
-                    <input
-                        class="input"
-                        type="date"
-                        id="name"
-                        maxlength="36"
-                        value=" <%=   %>"
-                    />
-                    <label class="form-label" id="valueFromMyButton" for="count"
-                        >Project</label
-                    >
-                    <input
-                        class="input"
-                        type="date"
-                        id="name"
-                        maxlength="36"
-                        value=" <%=  %>"
-                    />
-                    <input
-                        type="button"
-                        value="Cancel"
-                        class="button"
-                        id="cancel-button"
-                    />
-                </div>
-            </form>
-        </div>
-</div>
         <script src="js/calendar.js"></script>
     </body>
 </html>
