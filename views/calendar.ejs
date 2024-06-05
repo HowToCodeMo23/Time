@@ -41,6 +41,7 @@
                         <span class="left-button fa fa-chevron-left" id="prev">
                         </span>
                         <span class="year" id="label"></span>
+
                         <span
                             class="right-button fa fa-chevron-right"
                             id="next"
@@ -89,34 +90,32 @@
             </div>
             <div class="events-container"></div>
             <div class="dialog" id="dialog">
-                <h2 class="dialog-header">Your Time Data</h2>
+                <h2 class="dialog-header">Deine Zeitdaten</h2>
                 <form class="form" id="form">
                     <div class="form-container" align="center">
                         <label
                             class="form-label"
                             id="valueFromMyButton"
-                            for="name"
-                            >WorkTime</label
+                            for="time-data"
+                            >Zeitdaten</label
                         >
                         <input
                             class="input"
-                            type="date"
-                            id="name"
-                            maxlength="36"
-                            value=" <%=   %>"
+                            id="time-data"
+                            maxlength="500"
+                            value="<%= times %>"
                         />
                         <label
                             class="form-label"
                             id="valueFromMyButton"
-                            for="count"
-                            >Project</label
+                            for="project"
+                            >Projekt</label
                         >
                         <input
                             class="input"
-                            type="date"
-                            id="name"
-                            maxlength="36"
-                            value=" <%=  %>"
+                            id="project"
+                            maxlength="500"
+                            value="<%= projects.join(', ') %>"
                         />
                         <input
                             type="button"

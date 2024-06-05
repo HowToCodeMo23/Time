@@ -3,8 +3,8 @@ import bodyParser from 'body-parser'; // Middleware zum Parsen von URL-codierten
 import pg from 'pg'; // PostgreSQL-Datenbanktreiber
 import session from 'express-session'; // Middleware für Sitzungsverwaltung
 import argon2 from 'argon2'; // Bibliothek für Passwort-Hashing
-import fs from 'fs'; //Bibliothek für FileSystem
-import path from 'path'; //Bibliotek für Pfadmanagement
+import fs from 'fs'; // Bibliothek für FileSystem
+import path from 'path'; // Bibliothek für Pfadmanagement
 
 // Initialisiere die Express-App
 const app = express();
@@ -33,8 +33,6 @@ const db = new pg.Pool({
     port: 5432, // Datenbankport
 });
 
-//db.connect(); // Verbinde mit der PostgreSQL-Datenbank
-
 // Middleware zum Parsen von URL-codierten Daten
 app.use(bodyParser.urlencoded({ extended: true }));
 // Middleware zum Bereitstellen statischer Dateien aus dem Verzeichnis 'public'
@@ -42,7 +40,7 @@ app.use(express.static('public'));
 
 // Stammroute
 app.get('/', (req, res) => {
-    console.log(req.session);
+    console.log(req.session.user);
     if (!req.session.user) {
         res.render('index.ejs', { error: req.query.error });
     } else {
@@ -99,7 +97,7 @@ app.get('/dashboard', async (req, res) => {
         try {
             // Projekte aus der Datenbank abrufen
             const result = await db.query('SELECT * FROM projects');
-            const projects = result.rows; // Assuming the result contains an array of projects
+            const projects = result.rows;
 
             // Log the retrieved projects for debugging
             console.log('Retrieved Projects:', projects);
@@ -208,7 +206,30 @@ app.get('/logout', (req, res) => {
 // Kalender-Route
 app.get('/calendar', async (req, res) => {
     if (req.session.user) {
-        res.render('calendar.ejs');
+        try {
+            // Abfrage der Zeitdaten und Projekte für den angemeldeten Benutzer
+            const timesResult = await db.query(
+                'SELECT startzeit, endzeit FROM times WHERE e_id = $1',
+                [req.session.user.personalid]
+            );
+            const projectsResult = await db.query(
+                'SELECT projectname FROM projects WHERE projectid IN (SELECT p_id FROM times WHERE e_id = $1)',
+                [req.session.user.personalid]
+            );
+
+            // Zusammenfassen der Zeitdaten in einen String
+            const times = timesResult.rows
+                .map((row) => `Start: ${row.startzeit}, Ende: ${row.endzeit}`)
+                .join(' | ');
+
+            // Extrahieren der Projektnamen in ein Array
+            const projects = projectsResult.rows.map((row) => row.projectname);
+
+            res.render('calendar.ejs', { times, projects });
+        } catch (error) {
+            console.error('Fehler beim Abrufen der Daten:', error);
+            res.status(500).send('Interner Serverfehler');
+        }
     } else {
         res.redirect('/');
     }

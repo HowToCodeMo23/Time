@@ -29,7 +29,7 @@
         $('.tbody').empty();
         $('.events-container').empty();
         var calendar_days = $('.tbody');
-        var month = date.getMonth();
+        const month = date.getMonth();
         var year = date.getFullYear();
         var day_count = days_in_month(month, year);
         var row = $("<tr class='table-row'></tr>");
@@ -59,6 +59,7 @@
                     curr_date.addClass('active-date');
                     show_events(events, months[month], day);
                 }
+
                 // If this date has any events, style it with .event-date
                 if (events.length !== 0) {
                     curr_date.addClass('event-date');
