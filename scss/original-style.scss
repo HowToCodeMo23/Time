@@ -1,0 +1,143 @@
+html {
+  background-color: transparent;
+}
+
+header {
+  background-color: #1f2c3c;
+}
+
+#logo {
+  padding-left: 4%;
+}
+
+#logout {
+  padding-right: 4%;
+}
+
+#Logo {
+  margin-top: 10px;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+}
+
+#login {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dddddd;
+  box-shadow: 0px 0px 10px 0px #1f2c3c;
+  border-radius: 10px;
+}
+
+#butt1 {
+  background-color: #f18416;
+}
+
+#butt2 {
+  background-color: #f18416;
+}
+
+#logout {
+  display: flex;
+  justify-content: right;
+}
+
+#table {
+  height: 100vh;
+  width: 100%;
+}
+
+#timeTable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+.calendarBox {
+  height: 100vh;
+  width: 50%;
+}
+#Calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.grid-item2 {
+  margin-bottom: 20px;
+}
+
+.grid-item3 {
+  margin-bottom: 20px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown:hover .dropdown-toggle {
+  background-color: #cccccc;
+}
+
+#admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+#buttAdmin {
+  background-color: #f18416;
+}
+
+.custom-container {
+  padding: 10px; /* Abstand um den Inhalt */
+}
+
+.custom-brand {
+  margin-right: auto; /* Logo ganz links */
+}
+
+.custom-nav {
+  margin-left: auto; /* Platzhalter für Dashboard in der Mitte */
+}
+
+.custom-button {
+  margin-left: 10px; /* Abstand zwischen Dashboard und Logout-Button */
+}
